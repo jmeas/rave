@@ -22,6 +22,9 @@ define(function(require) {
   var admin = require('./subapps/admin/admin');
   var auth = require('./subapps/auth/auth');
 
+  // Our services
+  var pageTitle = require('./providers/page-title/page-title');
+
   // Create an array out of our dependencies for Angular's DI
   var raveDependencies = [
     'ui.router',
@@ -32,7 +35,8 @@ define(function(require) {
     profile.name,
     auth.name,
     admin.name,
-    'filters'
+    'filters',
+    pageTitle.name
   ];
 
   // Create Rave as an Angular module

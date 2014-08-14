@@ -40,12 +40,6 @@ define(function(require) {
 	require('./modules/preferences/get.js');
 	require('./modules/preferences/put.js');
 
-	// users
-	require('./modules/users/get.js');
-	require('./modules/user/get.js');
-	require('./modules/user/put.js');
-	require('./modules/user/delete.js');
-
 	// pages
 	require('./modules/pages/get.js');
 
