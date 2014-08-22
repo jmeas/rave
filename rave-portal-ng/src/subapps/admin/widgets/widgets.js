@@ -18,6 +18,10 @@ define(function(require) {
   // Create our module
   var widgets = ng.module('admin.widgets', widgetsDependencies);
 
+  // Register our providers
+  widgets.factory('widgetsResource', require('./resources/widgets'));
+  widgets.controller('widgetsCtrl', require('./controllers/widgets'));
+
   // Register the routes
   var routes = require('./routes');
   widgets.config(routes);
