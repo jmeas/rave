@@ -9,6 +9,7 @@ define(function(require) {
   function($scope, $stateParams, pagination, widgetsList, $rootScope) {
 
     $scope.currentPage = +$stateParams.page || 0;
+    $scope.filter = $stateParams.filter || '';
 
     widgetsList.$promise.then(function() {
       $scope.widgets = widgetsList.data;

@@ -14,7 +14,7 @@ define(function(require) {
     function($stateProvider, $urlRouterProvider) {
       $stateProvider
         .state('portal.admin.widgets', {
-          url: '/widgets?page',
+          url: '/widgets?page&filter',
           templateUrl: '/subapps/admin/widgets/templates/widgets.html',
           authenticate: true,
           controller: widgetsCtrl,
@@ -22,7 +22,8 @@ define(function(require) {
             widgetsList: ['widgetsResource', '$stateParams',
               function(widgetsResource, $stateParams) {
                 return widgetsResource.get({
-                  page: $stateParams.page
+                  page: $stateParams.page,
+                  filter: $stateParams.filter
                 });
               }
             ]

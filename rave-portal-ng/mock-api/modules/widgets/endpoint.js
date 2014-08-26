@@ -15,7 +15,7 @@ define(function(require) {
     // Return our paginated data
     get: function(url, data, headers, params, currentUser) {
       var currentPage = params.page || 1;
-      return [200, widgetsUtil.getPage(currentPage)];
+      return [200, widgetsUtil.getPage(currentPage, params.filter)];
     }
   });
 

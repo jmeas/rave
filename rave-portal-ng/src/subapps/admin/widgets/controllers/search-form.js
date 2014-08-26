@@ -9,7 +9,7 @@ define(function(require) {
 
   // Return the categories resource
   return ['$scope', 'widgetsResource', 'pagination', '$state',
-  function($scope, widgetsResource, pagination) {
+  function($scope, widgetsResource, pagination, $state) {
 
     // Our paginationPages
     $scope.paginationPages = pagination.paginationPages;
@@ -65,7 +65,7 @@ define(function(require) {
           });
 
           $scope.widgetsMeta = widgetsMeta;
-          $state.transitionTo('portal.admin.widgets', {page:1});
+          $state.transitionTo('portal.admin.widgets', {page:1, filter:$scope.filter});
         })
         .catch(function() {
         });
