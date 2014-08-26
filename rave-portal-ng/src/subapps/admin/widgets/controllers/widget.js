@@ -27,16 +27,20 @@ define(function(require) {
       'properties',
       'disable',
       'disabledMessage',
-      'featured'
+      'featured',
+      'categoriesList',
+      'categories'
     ];
 
     widget.$promise.then(function(res) {
       _.extend($scope, _.pick(res, keys));
 
-      // $scope.roleUser = _.contains($scope.authorities, 'ROLE_USER');
-      // $scope.roleAdmin = _.contains($scope.authorities, 'ROLE_ADMIN');
+      // This sets the selected categories on the scope based on what's returned
+      // by the server.
+      $scope.selectedCategories = _.filter($scope.categoriesList, function(category) {
+        return _.contains($scope.categories, category.text);
+      });
 
-      // $scope.isCurrentUser = $scope.widget.ID === $scope.currentUser.ID;
     }).catch(function(err) {
     });
 
@@ -57,21 +61,17 @@ define(function(require) {
 
     var ctrl = this;
 
-    var getAuthorities = function() {
-      var authorities = [];
-      if ($scope.roleUser) {
-        authorities.push('ROLE_USER');
-      }
-      if ($scope.roleAdmin) {
-        authorities.push('ROLE_ADMIN');
-      }
-      return authorities;
-    };
+    // Keys that are present in what we receive from the server
+    // that we do not want to send back to the server
+    var blacklistedKeys = [
+      'categoriesList'
+    ];
 
     $scope.onSave = function() {
-      var data = _.pick($scope, keys);
-      data.authorities = getAuthorities();
+      var data = _.pick($scope, _.difference(keys, blacklistedKeys));
+      data.categories = _.pluck($scope.selectedCategories, 'text');
       data.id = $stateParams.id;
+      
       var savedResource = widgetResource.update(data);
       
       savedResource.$promise

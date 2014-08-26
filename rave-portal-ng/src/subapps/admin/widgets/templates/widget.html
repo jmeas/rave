@@ -89,14 +89,8 @@
     <div class="control-group">
       <label for="categories" class="control-label">Categories:</label>
         <div class="controls">
-          <select id="categories" name="categories" multiple="multiple" size="10">
-            <option value="5">Communications</option>
-            <option value="2">News</option>
-            <option value="4">Projects</option>
-            <option value="1">Technology</option>
-            <option value="3">Travel</option>
+          <select id="categories" name="categories" multiple ng-model="selectedCategories" ng-options="category.text for category in categoriesList">
           </select>
-        <input type="hidden" name="_categories" value="1">
       </div>
     </div>
     <div class="control-group">
@@ -137,7 +131,7 @@
       </div>
     </div>
     <fieldset>
-      <button class="btn btn-primary" type="submit" value="Update widget" ng-click="onSave()">Update widget</button>
+      <button class="btn" type="submit" value="Update widget" ng-click="onSave()">Save Changes</button>
     </fieldset>
   </form>
 </section>
