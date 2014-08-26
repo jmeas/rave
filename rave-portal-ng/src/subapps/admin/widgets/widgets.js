@@ -19,6 +19,7 @@ define(function(require) {
   var widgets = ng.module('admin.widgets', widgetsDependencies);
 
   // Register our providers
+  widgets.factory('widgetsMessages', require('./services/widgets-messages'));
   widgets.factory('widgetsResource', require('./resources/widgets'));
   widgets.factory('widgetResource', require('./resources/widget'));
   widgets.controller('widgetsCtrl', require('./controllers/widgets'));

@@ -11,7 +11,7 @@ define(function(require) {
     'author': 'OpenSocial Foundation',
     'authorEmail': null,
     'description': 'OpenSocial Activity Stream gadget with support for Embedded Experiences',
-    'status': 'PUBLISHED',
+    'status': 'PREVIEW',
     'properties': null,
     'disable': false,
     'disabledMessage': null,

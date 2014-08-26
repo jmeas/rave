@@ -1,5 +1,5 @@
 /*
- * user
+ * widget
  * Handles submission of our form
  *
  */
@@ -7,44 +7,52 @@
 define(function(require) {
   var $ = require('jquery');
 
-  return ['$scope', 'userResource', '$state', '$stateParams', 'user', 'usersMessages',
-  function($scope, userResource, $state, $stateParams, user, usersMessages) {
+  return ['$scope', 'widgetResource', '$state', '$stateParams', 'widget', 'widgetsMessages',
+  function($scope, widgetResource, $state, $stateParams, widget, widgetsMessages) {
 
-    $scope.user = user;
+    $scope.widget = widget;
 
     // The values to merge onto this scope once the promise resolves
     var keys = [
-      'email',
-      'openIdUrl',
-      'enabled',
-      'expired',
-      'locked',
-      'authorities'
+      'title',
+      'titleUrl',
+      'url',
+      'thumbnailUrl',
+      'screenshotUrl',
+      'type',
+      'author',
+      'authorEmail',
+      'description',
+      'status',
+      'properties',
+      'disable',
+      'disabledMessage',
+      'featured'
     ];
 
-    user.$promise.then(function(res) {
-      _.extend($scope, res);
+    widget.$promise.then(function(res) {
+      _.extend($scope, _.pick(res, keys));
 
       // $scope.roleUser = _.contains($scope.authorities, 'ROLE_USER');
       // $scope.roleAdmin = _.contains($scope.authorities, 'ROLE_ADMIN');
 
-      // $scope.isCurrentUser = $scope.user.ID === $scope.currentUser.ID;
+      // $scope.isCurrentUser = $scope.widget.ID === $scope.currentUser.ID;
     }).catch(function(err) {
     });
 
-    // Remove the user from the list of user in the scope
+    // Remove the widget from the list of widget in the scope
     this.removeFromList = function() {
-      var oldUser = _.findWhere($scope.user, {ID:+$stateParams.id});
-      var oldIndex = _.indexOf($scope.user, oldUser);
-      $scope.users.splice(oldIndex, 1);
+      var oldUser = _.findWhere($scope.widget, {ID:+$stateParams.id});
+      var oldIndex = _.indexOf($scope.widget, oldUser);
+      $scope.widgets.splice(oldIndex, 1);
     };
 
     // Replace the old item in the list with the new
     this.updateList = function(newResource) {
-      var oldUser = _.findWhere($scope.users, {ID:+$stateParams.id});
-      var oldIndex = _.indexOf($scope.users, oldUser);
-      $scope.users[oldIndex] = newResource;
-      $scope.user = newResource;
+      var oldUser = _.findWhere($scope.widgets, {ID:+$stateParams.id});
+      var oldIndex = _.indexOf($scope.widgets, oldUser);
+      $scope.widgets[oldIndex] = newResource;
+      $scope.widget = newResource;
     };
 
     var ctrl = this;
@@ -64,20 +72,20 @@ define(function(require) {
       var data = _.pick($scope, keys);
       data.authorities = getAuthorities();
       data.id = $stateParams.id;
-      var savedResource = userResource.update(data);
+      var savedResource = widgetResource.update(data);
       
       savedResource.$promise
         .then(function(response) {
           ctrl.updateList(response);
-          usersMessages.updateMessage(response.username);
-          $state.transitionTo('portal.admin.users');
+          widgetsMessages.updateMessage(response.widgetname);
+          $state.transitionTo('portal.admin.widgets');
         })
         .catch(function(err) {
         });
     };
 
     $scope.onDelete = function() {
-      var deletedResource = userResource.delete({
+      var deletedResource = widgetResource.delete({
         id: $stateParams.id
       });
 
@@ -85,8 +93,8 @@ define(function(require) {
         .then(function() {
           ctrl.removeFromList();
           $('#confirm-modal').modal('hide');
-          usersMessages.deleteMessage($scope.user.username);
-          $state.transitionTo('portal.admin.users');
+          widgetsMessages.deleteMessage($scope.widget.widgetname);
+          $state.transitionTo('portal.admin.widgets');
         })
         .catch(function() {
         });

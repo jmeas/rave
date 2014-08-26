@@ -34,7 +34,7 @@ define(function(require) {
           authenticate: true,
           controller: widgetCtrl,
           resolve: {
-            user: ['widgetResource', '$stateParams',
+            widget: ['widgetResource', '$stateParams',
               function(widgetResource, $stateParams) {
                 console.log('ok');
                 return widgetResource.get({id: $stateParams.id});
