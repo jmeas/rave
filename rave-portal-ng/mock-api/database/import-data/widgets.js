@@ -2,7 +2,6 @@ define(function(require) {
   'use strict';
 
   return [{
-    'id': '17',
     'title': 'Activity Stream',
     'titleUrl': null,
     'url': 'https://raw.github.com/OpenSocial/examples/master/gadgets/activitystream/gadget.xml',
@@ -19,7 +18,6 @@ define(function(require) {
     'featured': true
   },
   {
-    'id': '30',
     'title': 'Actions Example',
     'titleUrl': null,
     'url': 'http://localhost:8080/demogadgets/actions_contributions.xml',
@@ -36,7 +34,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '12',
     'title': 'Activity Streams',
     'titleUrl': null,
     'url': 'http://localhost:8080/demogadgets/my_activity.xml',
@@ -53,7 +50,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '18',
     'title': 'Album Viewer',
     'titleUrl': null,
     'url': 'http://localhost:8080/samplecontainer/examples/embeddedexperiences/AlbumViewer.xml',
@@ -70,7 +66,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '13',
     'title': 'Current Schedule',
     'titleUrl': null,
     'url': 'http://localhost:8080/demogadgets/schedule.xml',
@@ -87,7 +82,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '28',
     'title': 'EE YouTube Example',
     'titleUrl': null,
     'url': 'http://opensocial2.org:8080/collabapp/pages/home/embeddedExperiences/YouTube.xml',
@@ -104,7 +98,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '29',
     'title': 'EE jQuery Photo Example',
     'titleUrl': null,
     'url': 'http://accelerator.opensocial2.org/gadgets/photos/jquery_photo_ee.xml',
@@ -121,7 +114,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '14',
     'title': 'Favorite Websites',
     'titleUrl': null,
     'url': 'http://localhost:8080/demogadgets/favorite_websites.xml',
@@ -138,7 +130,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '27',
     'title': 'Friends',
     'titleUrl': null,
     'url': 'http://localhost:8080/demogadgets/friends.xml',
@@ -155,7 +146,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '10',
     'title': 'Gadget View Type',
     'titleUrl': null,
     'url': 'http://localhost:8080/demogadgets/canvas-nav.xml',
@@ -172,7 +162,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '4',
     'title': 'Google News Gadget',
     'titleUrl': null,
     'url': 'http://www.gstatic.com/ig/modules/tabnews/tabnews.xml',
@@ -189,7 +178,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '6',
     'title': 'Herbie Hamster Virtual Pet',
     'titleUrl': null,
     'url': 'http://hosting.gmodules.com/ig/gadgets/file/109548057311228444554/hamster.xml',
@@ -206,7 +194,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '7',
     'title': 'List of CTSS Resources - Map View',
     'titleUrl': null,
     'url': 'http://localhost:8080/demogadgets/CTSSResourcesMapView.xml',
@@ -223,7 +210,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '16',
     'title': 'My Experience',
     'titleUrl': null,
     'url': 'http://localhost:8080/demogadgets/my_experience.xml',
@@ -240,7 +226,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '15',
     'title': 'My Groups',
     'titleUrl': null,
     'url': 'http://localhost:8080/demogadgets/my_groups.xml',
@@ -257,7 +242,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '3',
     'title': 'NYTimes.com - Top Stories',
     'titleUrl': null,
     'url': 'http://widgets.nytimes.com/packages/html/igoogle/topstories.xml',
@@ -274,7 +258,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '20',
     'title': 'OAuth2 Facebook',
     'titleUrl': null,
     'url': 'http://localhost:8080/samplecontainer/examples/oauth2/oauth2_facebook.xml',
@@ -291,7 +274,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '23',
     'title': 'Ohloh Apache Rave COCOMO Estimates',
     'titleUrl': null,
     'url': 'http://www.ohloh.net/p/521520/widgets/project_cocomo.xml',
@@ -308,7 +290,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '22',
     'title': 'Ohloh Apache Rave Factoids',
     'titleUrl': null,
     'url': 'http://www.ohloh.net/p/521520/widgets/project_factoids.xml',
@@ -325,7 +306,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '21',
     'title': 'Ohloh Apache Rave Languages',
     'titleUrl': null,
     'url': 'http://www.ohloh.net/p/521520/widgets/project_languages.xml',
@@ -342,7 +322,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '24',
     'title': 'Ohloh Apache Rave Stats',
     'titleUrl': null,
     'url': 'http://www.ohloh.net/p/521520/widgets/project_basic_stats.xml',
@@ -359,7 +338,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '9',
     'title': 'Open Views Demo',
     'titleUrl': null,
     'url': 'http://localhost:8080/demogadgets/open_views_demo.xml',
@@ -376,7 +354,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '25',
     'title': 'OpenAJAX Hub Publisher',
     'titleUrl': null,
     'url': 'http://localhost:8080/container/sample-pubsub-2-publisher.xml',
@@ -393,7 +370,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '26',
     'title': 'OpenAJAX Hub Subscriber',
     'titleUrl': null,
     'url': 'http://localhost:8080/container/sample-pubsub-2-subscriber.xml',
@@ -410,7 +386,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '5',
     'title': 'Pet Hamster',
     'titleUrl': null,
     'url': 'http://hosting.gmodules.com/ig/gadgets/file/112581010116074801021/hamster.xml',
@@ -427,7 +402,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '19',
     'title': 'Photo List',
     'titleUrl': null,
     'url': 'http://localhost:8080/samplecontainer/examples/embeddedexperiences/PhotoList.xml',
@@ -444,7 +418,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '2',
     'title': 'Translate Gadget',
     'titleUrl': 'http://translate.google.com/',
     'url': 'http://www.gstatic.com/ig/modules/dictionary/dictionary.xml',
@@ -461,7 +434,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '11',
     'title': 'User Prefs Demo',
     'titleUrl': null,
     'url': 'http://localhost:8080/demogadgets/user_prefs_demo.xml',
@@ -478,7 +450,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '1',
     'title': 'Wikipedia',
     'titleUrl': 'http://en.wikipedia.org/wiki/Main_Page',
     'url': 'http://www.widget-dico.com/wikipedia/google/wikipedia.xml',
@@ -495,7 +466,6 @@ define(function(require) {
     'featured': false
   },
   {
-    'id': '8',
     'title': 'Youtube',
     'titleUrl': null,
     'url': 'http://localhost:8080/demogadgets/youtubesearch.xml',
