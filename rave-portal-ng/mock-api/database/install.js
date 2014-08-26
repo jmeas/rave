@@ -11,7 +11,7 @@ define(function(require) {
 	var dataImport = {
 		users: require('./import-data/users.js'),
 		categories: require( './import-data/categories.js' ),
-		preferences: require( './import-data/preferences.js' )
+		preferences: require( './import-data/preferences.js' ),
 		widgets: require( './import-data/widgets.js' )
 	};
 
