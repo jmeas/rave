@@ -35,6 +35,7 @@ define(function(require) {
 	api.registerEndpoint(require('./modules/user/endpoint'));
 
 	// widgets
+	api.registerEndpoint(require('./modules/widget/endpoint'));
 	api.registerEndpoint(require('./modules/widgets/endpoint'));
 
 	// status

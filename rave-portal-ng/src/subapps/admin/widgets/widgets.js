@@ -20,7 +20,9 @@ define(function(require) {
 
   // Register our providers
   widgets.factory('widgetsResource', require('./resources/widgets'));
+  widgets.factory('widgetResource', require('./resources/widget'));
   widgets.controller('widgetsCtrl', require('./controllers/widgets'));
+  widgets.controller('widgetCtrl', require('./controllers/widget'));
 
   // Register the routes
   var routes = require('./routes');

@@ -8,6 +8,7 @@
 
 define(function(require) {
   var widgetsCtrl = require('./controllers/widgets');
+  var widgetCtrl = require('./controllers/widget');
 
   return ['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
@@ -28,9 +29,17 @@ define(function(require) {
           }
         })
         .state('portal.admin.widgets.detail', {
-          url: '/widgets/detail-:id',
-          templateUrl: '/subapps/admin/widgets/templates/detail.html',
-          authenticate: true
+          url: '/detail-:id',
+          templateUrl: '/subapps/admin/widgets/templates/widget.html',
+          authenticate: true,
+          controller: widgetCtrl,
+          resolve: {
+            user: ['widgetResource', '$stateParams',
+              function(widgetResource, $stateParams) {
+                console.log('ok');
+                return widgetResource.get({id: $stateParams.id});
+              }]
+          }
         });
     }
   ];

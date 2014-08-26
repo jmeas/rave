@@ -67,7 +67,7 @@
     <tbody>
       <tr ng-repeat="widget in widgets">
         <td>
-          <a ui-sref="portal.admin.widgets.detail({id: {{ widget.id }}})">
+          <a ui-sref="portal.admin.widgets.detail({id: {{ widget.ID }}, page: null})">
             {{ widget.title }}
           </a>
         </td>
