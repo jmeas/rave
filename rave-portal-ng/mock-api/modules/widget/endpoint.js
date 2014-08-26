@@ -8,6 +8,7 @@ define(function(require) {
   var Endpoint = require('../../util/endpoint');
   var ErrorResponse = require('../../util/error-response');
   var widgetUtil = require('./widget-util');
+  var categoriesUtil = require('../categories/categories-util');
 
   var endpoint = new Endpoint({
 
@@ -31,6 +32,8 @@ define(function(require) {
       if (!widget) {
         return new ErrorResponse(404, 'User does not exist.');
       }
+
+      widget.categoriesList = categoriesUtil.getAllCategories();
 
       // Return the widget
       return [200, widget];

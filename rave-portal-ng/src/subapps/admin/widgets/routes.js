@@ -29,14 +29,13 @@ define(function(require) {
           }
         })
         .state('portal.admin.widgets.detail', {
-          url: '/detail-:id',
+          url: '/widget/:id',
           templateUrl: '/subapps/admin/widgets/templates/widget.html',
           authenticate: true,
           controller: widgetCtrl,
           resolve: {
             widget: ['widgetResource', '$stateParams',
               function(widgetResource, $stateParams) {
-                console.log('ok');
                 return widgetResource.get({id: $stateParams.id});
               }]
           }
