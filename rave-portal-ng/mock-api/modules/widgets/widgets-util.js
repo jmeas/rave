@@ -16,12 +16,19 @@ define(function(require) {
     },
 
     // Get the list of all users
-    getPage: function(currentPage) {
+    getPage: function(currentPage, filter) {
 
       // Get the page size from the database
       var pageSize = preferencesUtil.getPreference('pageSize');
 
       var allWidgets = widgetsUtil.getAll();
+
+      // Filter them, if filter is passed
+      if (filter) {
+        allWidgets = _.filter(allWidgets, function(widget) {
+          return widget.title.toLowerCase().indexOf(filter.toLowerCase()) > -1;
+        });
+      }
 
       // The first index to start from
       var startIndex = (currentPage - 1) * pageSize;
