@@ -2,7 +2,7 @@
   <h2>
     Showing {{ widgetsMeta.start }} - {{ widgetsMeta.end }} of {{ widgetsMeta.totalUsers }} results
   </h2>
-  <div class="searchHeading paginationHeading">
+  <div class="searchHeading paginationHeading clearfix">
     <div class="pagination">
       <ul>
         <li ng-switch on="prevPageDisabled()" ng-class="prevPageDisabled()">
@@ -23,35 +23,6 @@
         <div class="input-append">
           <input class="input-medium" type="search" id="searchTerm" name="searchTerm" value="" placeholder="Search Widgets">
           <button class="btn btn-primary" type="submit" value="Search">Search</button>
-        </div>
-        <p>
-          <a href="#" data-toggle="collapse" data-target="#searchFilters">
-            Search Options...
-          </a>
-        </p>
-        <div id="searchFilters" class="collapse">
-          <select name="widgettype" id="widgettype" class="input-medium">
-            <option value="">
-              Choose Type...
-            </option>
-            <option value="OpenSocial">
-              OpenSocial
-            </option>
-            <option value="W3C">
-              W3C Widget
-            </option>
-          </select>
-          <select name="widgetstatus" id="widgetstatus" class="input-medium">
-            <option value="">
-              Choose Status...
-            </option>
-            <option value="published">
-              published
-            </option>
-            <option value="preview">
-              review
-            </option>
-          </select>
         </div>
       </fieldset>
     </form>
